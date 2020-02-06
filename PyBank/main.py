@@ -24,10 +24,12 @@ import csv
 #Set path for CSV file in PyBankcsv
 #Activity 3.2.7
 #csvpath = os.path.join('accounting.csv')
+##this is where the problem really is
+##tried changing the file location, the extended file path, nothing is working
 pyBankcsv = os.path.join('budget_data.csv')
 
 #Create lists for the data
-#Activity
+#Activity 3.2.8
 
 profit = []
 monthlychanges = []
@@ -35,30 +37,27 @@ date = []
 
 
 #Set up the variables needed
-#Activity
-#set at 0 because 
+#Activity 3.3.8
 count = 0
 totalprofit = 0
 totalchangeprofits = 0
 initialprofit = 0
 
+#Open the CSV with set path
+##this is where the problem says it is
 with open(pyBankcsv, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
 
 #Open the CSV with set path
-with open(pyBankcsv, newline='') as csvfile:
-    csvreader = csv.reader(csvfile, delimiter=',')
-    csv_header = next(csvreader)
-
-
     #for loop
-    #Activity
+    #Activity 3.1.11, Activity 3.3.1
     #remember that colon!
     for row in csvreader:
         #count the number months in the dataset
         count = count + 1
-
+    
+    #Activity 3.3.8
     #Will need date to collect greatest increase and decrease
         date.append(row[0])
 
@@ -86,6 +85,7 @@ with open(pyBankcsv, newline='') as csvfile:
         dateIncrease = date[monthlychanges.index(greatestIncrease)]
         dateDecrease = date[monthlychanges.index(greatestDecrease)]
     #print it all out
+    #Activity 3.3.3
     print("-----------------------------------------------")
     print("Financial Analysis")
     print("-----------------------------------------------")
@@ -96,6 +96,7 @@ with open(pyBankcsv, newline='') as csvfile:
     print(f"Greatest Decrease in Profits: {dateDecrease} ${greatestDecrease}")
     print("-----------------------------------------------")
 
+#Activity 3.2.5
 with open ('financial_analysis.txt', 'w') as text:
     text.write("-----------------------------------------------")
     text.write("    Financial Analysis" + "\n")
