@@ -26,6 +26,9 @@ import csv
 #csvpath = os.path.join('accounting.csv')
 ##this is where the problem really is
 ##tried changing the file location, the extended file path, nothing is working
+#pyBankcsv = os.path.join('C:\Users\derek\Desktop\daAnalyticsBootCamp\Homework\Homework3Python\python-challenge\PyBank\budget_data.csv')
+#pyBankcsv = os.path.join('C:', 'Users', 'derek', 'Desktop', 'daAnalyticsBootCamp', 'Homework', 'Homework3Python', 'python-challenge', 'PyBank', 'budget_data.csv')
+#pyBankcsv = os.path.join('..', 'PyBank', 'budget_data.csv')
 pyBankcsv = os.path.join('budget_data.csv')
 
 #Create lists for the data
@@ -49,7 +52,6 @@ with open(pyBankcsv, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     csv_header = next(csvreader)
 
-#Open the CSV with set path
     #for loop
     #Activity 3.1.11, Activity 3.3.1
     #remember that colon!
