@@ -29,7 +29,7 @@ import csv
 #pyBankcsv = os.path.join('C:\Users\derek\Desktop\daAnalyticsBootCamp\Homework\Homework3Python\python-challenge\PyBank\budget_data.csv')
 #pyBankcsv = os.path.join('C:', 'Users', 'derek', 'Desktop', 'daAnalyticsBootCamp', 'Homework', 'Homework3Python', 'python-challenge', 'PyBank', 'budget_data.csv')
 #pyBankcsv = os.path.join('..', 'PyBank', 'budget_data.csv')
-pyBankcsv = os.path.join('budget_data.csv')
+pyBankcsv = 'budget_data.csv'
 
 #Create lists for the data
 #Activity 3.2.8
