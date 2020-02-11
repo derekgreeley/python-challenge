@@ -29,7 +29,9 @@ import csv
 #pyBankcsv = os.path.join('C:\Users\derek\Desktop\daAnalyticsBootCamp\Homework\Homework3Python\python-challenge\PyBank\budget_data.csv')
 #pyBankcsv = os.path.join('C:', 'Users', 'derek', 'Desktop', 'daAnalyticsBootCamp', 'Homework', 'Homework3Python', 'python-challenge', 'PyBank', 'budget_data.csv')
 #pyBankcsv = os.path.join('..', 'PyBank', 'budget_data.csv')
-pyBankcsv = 'budget_data.csv'
+pyBankcsv = os.path.join('budget_data.csv')
+
+print(os.getcwd())
 
 #Create lists for the data
 #Activity 3.2.8
@@ -78,7 +80,8 @@ with open(pyBankcsv, newline='') as csvfile:
         initialprofit = finalprofit
 
     #calculate average change in profits
-        averagechangeprofits = (totalchangeprofits/count)
+    #check this part
+    
 
     #find max and min with their dates
         greatestIncrease = max(monthlychanges)
@@ -86,6 +89,9 @@ with open(pyBankcsv, newline='') as csvfile:
 
         dateIncrease = date[monthlychanges.index(greatestIncrease)]
         dateDecrease = date[monthlychanges.index(greatestDecrease)]
+    
+    averagechangeprofits = (totalchangeprofits/count)
+
     #print it all out
     #Activity 3.3.3
     print("-----------------------------------------------")
@@ -105,7 +111,9 @@ with open ('financial_analysis.txt', 'w') as text:
     text.write("-----------------------------------------------")
     text.write("    Total Months: " + str(count)+ "\n")
     text.write("    Total Profits: " +str(totalprofit)+ "\n")
-    text.write("    Average Change: " + '$' +str(int(averagechangeprofits) + "\n"))
+    text.write("    Average Change: " + '$' +str(int(averagechangeprofits)) + "\n")
     text.write("    Greatest Increase in Profits: " + str(dateDecrease)+ " ($" + str (greatestIncrease) + ") \n")
     text.write("    Greatest Decrease in Profits: " + str(dateDecrease)+ " ($" + str (greatestDecrease) + ") \n")
     text.write("-----------------------------------------------\n")
+
+#run outside of VSC.
